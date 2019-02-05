@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        #robot {
+            position: absolute;
+            top: 25vmin;
+            left: 25vmin;
+            width: 50vmin;
+            height: 50vmin;
+            border-radius: 0%;
+            border: 1px solid black;
+            transition: border-radius 1s;
+            overflow: hidden;
+            transform-origin: bottom;
+                   animation: fadeIN 7s,
+                                squeezeDOWN 0.5s 2s,
+                                jumpingUP 2s ease-out 2.5s,
+                                jumpingDOWN 2s ease-in 4.5s,
+                                squeezeDOWN2 2s 6.5s;
+        }
+        #robot:hover{
+            border-radius: 50%;
+        }
+        
+        @keyframes fadeIN {
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+        @keyframes squeezeDOWN{
+            from{transform: scaleY(1);}
+            to{transform:scaleY(0.8);}
+        }
+        @keyframes jumpingUP {
+            from{transform: scaleY(0.8) translateY(0);}
+            to{transform: scaleY(1.2)translateY(-20vmin);}
+        }
+        @keyframes jumpingDOWN {
+            from{transform: scaleY(1.2) translateY(-20vmin);}
+            to{transform: scaleY(1) translateY(0);}
+        }
+        @keyframes squeezeDOWN2 {
+            from{transform: scaleY(1);}
+            50%{transform:scaleY(0.5);}
+            to{transform: scaleY(1);}
+        }
+        #rect {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            width: 50%;
+            height: 30%;
+            background-color: black;
+            border-radius: 20%;
+            
+             animation: moveUP 2s infinite;
+            
+        }
+        
+        @keyframes moveUP {
+            from{transform: translateY(0p);}
+            50%{transform: translateY(-10%);}
+            to{transform: translateY(0%);}
+        }
+        #oval {
+            position: absolute;
+            top: 55%;
+            left: 30%;
+            width: 40%;
+            height: 20%;
+            background-color: white;
+            border-radius: 50%;
+              transform-origin: bottom;
+            animation: closeEYE 2s infinite;
+        }
+        @keyframes closeEYE{
+            from{transform: scaleY(1);}
+            50% {transform: scaleY(0.1);}
+            to{transform: scaleY(1)}
+        
+        }
+        #circle {
+            position: absolute;
+            top: 65%;
+            left: 45%;
+            width:10%;
+            height: 10%;
+            background-color: black;
+            border-radius: 50%;
+        }
+        #diamond {
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            width:10%;
+            height: 10%;
+            background-color: black;
+            transform: rotateZ(45deg);
+        }
+        #trapezoid {
+            position: absolute;
+            top: 78%;
+            left: 25%;
+            width: 50%;
+            height: 20%;
+            background-color: black;
+            transform: perspective(3em) rotateX(10deg);
+        }
+        #para01 {
+            position: absolute;
+            top: 65%;
+            left: 5%;
+            width: 20%;
+            height: 10%;
+            background-color: black;
+            
+            transform: skewX(-35deg);
+             animation: wing01 1s infinite;
+        }
+        
+        @keyframes wing01 {
+            from{transform: rotate(20deg)skewX(35);}
+            50% {transform: rotate(20g) skewX(35);}
+            to{transform: rotate(20deg) skewX(35);}
+        }
+        
+        #para02 {
+            position: absolute;
+            top: 65%;
+            left: 75%;
+            width: 20%;
+            height: 10%;
+            background-color: black;
+            transform: skewX(35deg);
+             animation: wing02 1s infinite;
+        }
+        
+        @keyframes wing02 {
+            from{transform: rotate(20deg)skewX(35);}
+            50% {transform: rotate(20g) skewX(35);}
+            to{transform: rotate(20deg) skewX(35);}
+        }
+        }
+        .accentColor {
+            background-color: hsl(240, 100%, 50%);
+            border: 2px solid red;
+            background-image: linear-gradient(red, black);
+        }
+    </style>
+    <body>
+        <div id="robot"> 
+            <div id="rect"> </div> 
+            <div id="oval"> </div>
+            <div id="circle"> </div>
+            <div id="diamond"> </div>
+            <div id="trapezoid"> </div>
+            <div id="para01"> </div>
+            <div id="para02"> </div>
+        </div>
+    </body>
+</html>
